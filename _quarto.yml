@@ -1,0 +1,28 @@
+project:
+  type: website
+  execute-dir: file
+execute: 
+  freeze: auto
+website:
+  title: ""
+  navbar:
+    collapse: false
+    left:
+      - href: index.qmd
+        text: Home
+      - href: cv.qmd
+        text: Publications
+      - href: genomics.qmd
+        text: Genomics
+      - href: posts.qmd
+        text: Blog
+
+format:
+  html:
+    theme:
+      - journal
+    css: styles.css
+    toc: true
+
+
+

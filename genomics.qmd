@@ -1,0 +1,34 @@
+---
+#title: ""
+---
+
+
+I have been involved in many genomics projects dealing with a wide range of organisms (@fig-species), although I now realize it was basically animals and a few fungi 😪 (working on my first plant genome now though!).
+
+For some of these projects I have performed genome assembly and gene annotation (and perhaps even the DNA extraction), for others only mitogenome assembly and annotation, and other times characterization of repeats and structural variants.
+
+As said by Dobzhansky and later turned into the meme: "Nothing in biology makes sense." That is to say I am always amazed at how often biology will defy our intuition. If you dig a little into pretty much any eukaryotic genome you're bound to find something odd and interesting.
+
+```{r setup, include=FALSE}
+library(ggtree)
+```
+
+```{r}
+#| code-fold: true
+#| warning: false
+#| label: fig-species
+#| fig-cap: "A cladogram of the species whose genomes I have analyzed one way or another. This cladogram was put together using common sense and occasionally googling for phylogeny images, so there could be mistakes."
+tree <- read.tree("data/species.nwk")
+tree$tip.label <- gsub("_", "~", tree$tip.label)
+tree$tip.label <- paste0("italic(", tree$tip.label, ")")
+
+treeplot <-
+ggtree(tree) + 
+  #geom_text(aes(label=node)) + 
+  geom_tiplab(parse=T, align = T) + 
+  xlim_tree(20) +
+  geom_cladelabel(node = 26, label = "Animals", offset = 7.5) +
+  geom_cladelabel(node = 41, label = "Fungi", offset = 7.5) +
+  geom_cladelabel(node = 22, label = "Alveolata", offset = 7.5)
+rotate(treeplot,32)
+```

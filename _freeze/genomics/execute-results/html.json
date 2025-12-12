@@ -1,0 +1,17 @@
+{
+  "hash": "2b221cef94d87dda85532ab5b386422a",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\n#title: \"\"\n---\n\n\nI have been involved in many genomics projects dealing with a wide range of organisms (@fig-species), although I now realize it was basically animals and a few fungi 😪 (working on my first plant genome now though!).\n\nFor some of these projects I have performed genome assembly and gene annotation (and perhaps even the DNA extraction), for others only mitogenome assembly and annotation, and other times characterization of repeats and structural variants.\n\nAs said by Dobzhansky and later turned into the meme: \"Nothing in biology makes sense.\" That is to say I am always amazed at how often biology will defy our intuition. If you dig a little into pretty much any eukaryotic genome you're bound to find something odd and interesting.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"true\"}\ntree <- read.tree(\"data/species.nwk\")\ntree$tip.label <- gsub(\"_\", \"~\", tree$tip.label)\ntree$tip.label <- paste0(\"italic(\", tree$tip.label, \")\")\n\ntreeplot <-\nggtree(tree) + \n  #geom_text(aes(label=node)) + \n  geom_tiplab(parse=T, align = T) + \n  xlim_tree(20) +\n  geom_cladelabel(node = 26, label = \"Animals\", offset = 7.5) +\n  geom_cladelabel(node = 41, label = \"Fungi\", offset = 7.5) +\n  geom_cladelabel(node = 22, label = \"Alveolata\", offset = 7.5)\nrotate(treeplot,32)\n```\n\n::: {.cell-output-display}\n![A cladogram of the species whose genomes I have analyzed one way or another. This cladogram was put together using common sense and occasionally googling for phylogeny images, so there could be mistakes.](genomics_files/figure-html/fig-species-1.png){#fig-species width=672}\n:::\n:::\n\n",
+    "supporting": [
+      "genomics_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

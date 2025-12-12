@@ -1,0 +1,40 @@
+---
+title: "Guilherme B. Dias"
+image: images/eu.jpeg
+about: 
+  template: solana
+  links: 
+    - icon: github
+      text: GitHub
+      url: https://github.com/gbdias
+    - icon: paperclip
+      text: Scholar
+      url: https://scholar.google.com/citations?user=tPx5zYAAAAAJ&hl
+    - icon: linkedin
+      text: LinkedIn
+      url: https://www.linkedin.com/in/guilherme-dias-53529b7b/
+---
+
+
+I am a former fruit fly cytogeneticist turned bioinformatics data scientist. I currently work at the National Bioinformatics Infrastructure Sweden ([NBIS](https://nbis.se/staff/employee-15)) at [Uppsala University](https://www.uu.se/en/contact-and-organisation/staff?query=N23-421). 
+
+At NBIS I support research projects as a bioinformatician, and also teach in workshops for PhD students, researchers, and group leaders. I am also involved in the European Reference Genome Atlas ([ERGA](https://www.erga-biodiversity.eu/), [BGE](https://biodiversitygenomics.eu/)) by doing a bunch of genome assemblies.
+
+I am interested in computational biology and data science. Big fan of only moderately painful learning, as well as fully automated luxury communism.
+
+<br/>
+
+##### Academic trajectory
+
+
+| | | | |
+|--| -- | -- | -- |
+|2007-2011| BSc Biomedical Science | Federal University of Goiás | Brazil |
+|2011-2013|MSc Genetics|Federal University of Minas Gerais|Brazil|
+|2013-2018|PhD Genetics|Federal University of Minas Gerais|Brazil/USA|
+|2018-2021|Postdoc|University of Georgia|USA|
+
+: { .sm .hover}
+
+
+

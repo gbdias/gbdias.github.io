@@ -1,0 +1,15 @@
+---
+#title: "CV"
+bibliography: mypapers.bib
+csl: apa.csl
+citeproc: true
+nocite: |
+  @*
+---
+
+
+
+___
+
+::: {#refs style="font-size: 80%"}
+:::
