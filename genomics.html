@@ -153,22 +153,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>I have been involved in many genomics projects dealing with a wide range of organisms (<a href="#fig-species" class="quarto-xref">Figure&nbsp;1</a>), although I now realize it was basically animals and a few fungi 😪 (working on my first plant genome now though!).</p>
 <p>For some of these projects I have performed genome assembly and gene annotation (and perhaps even the DNA extraction), for others only mitogenome assembly and annotation, and other times characterization of repeats and structural variants.</p>
 <p>As said by Dobzhansky and later turned into the meme: “Nothing in biology makes sense.” That is to say I am always amazed at how often biology will defy our intuition. If you dig a little into pretty much any eukaryotic genome you’re bound to find something odd and interesting.</p>
+<p>Anyways here is a tree with the species I have worked on. Updating it soon!</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tree <span class="ot">&lt;-</span> <span class="fu">read.tree</span>(<span class="st">"data/species.nwk"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tree<span class="sc">$</span>tip.label <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"_"</span>, <span class="st">"~"</span>, tree<span class="sc">$</span>tip.label)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tree<span class="sc">$</span>tip.label <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"italic("</span>, tree<span class="sc">$</span>tip.label, <span class="st">")"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>treeplot <span class="ot">&lt;-</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggtree</span>(tree) <span class="sc">+</span> </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#geom_text(aes(label=node)) + </span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tiplab</span>(<span class="at">parse=</span>T, <span class="at">align =</span> T) <span class="sc">+</span> </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim_tree</span>(<span class="dv">20</span>) <span class="sc">+</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_cladelabel</span>(<span class="at">node =</span> <span class="dv">26</span>, <span class="at">label =</span> <span class="st">"Animals"</span>, <span class="at">offset =</span> <span class="fl">7.5</span>) <span class="sc">+</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_cladelabel</span>(<span class="at">node =</span> <span class="dv">41</span>, <span class="at">label =</span> <span class="st">"Fungi"</span>, <span class="at">offset =</span> <span class="fl">7.5</span>) <span class="sc">+</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_cladelabel</span>(<span class="at">node =</span> <span class="dv">22</span>, <span class="at">label =</span> <span class="st">"Alveolata"</span>, <span class="at">offset =</span> <span class="fl">7.5</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">rotate</span>(treeplot,<span class="dv">32</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtree)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tree <span class="ot">&lt;-</span> <span class="fu">read.tree</span>(<span class="st">"data/species.nwk"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>tree<span class="sc">$</span>tip.label <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"_"</span>, <span class="st">"~"</span>, tree<span class="sc">$</span>tip.label)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>tree<span class="sc">$</span>tip.label <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"italic("</span>, tree<span class="sc">$</span>tip.label, <span class="st">")"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>treeplot <span class="ot">&lt;-</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggtree</span>(tree) <span class="sc">+</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#geom_text(aes(label=node)) + </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tiplab</span>(<span class="at">parse=</span>T, <span class="at">align =</span> T) <span class="sc">+</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim_tree</span>(<span class="dv">20</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_cladelabel</span>(<span class="at">node =</span> <span class="dv">26</span>, <span class="at">label =</span> <span class="st">"Animals"</span>, <span class="at">offset =</span> <span class="fl">7.5</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_cladelabel</span>(<span class="at">node =</span> <span class="dv">41</span>, <span class="at">label =</span> <span class="st">"Fungi"</span>, <span class="at">offset =</span> <span class="fl">7.5</span>) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_cladelabel</span>(<span class="at">node =</span> <span class="dv">22</span>, <span class="at">label =</span> <span class="st">"Alveolata"</span>, <span class="at">offset =</span> <span class="fl">7.5</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">rotate</span>(treeplot,<span class="dv">32</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-species" class="quarto-float quarto-figure quarto-figure-center anchored">
